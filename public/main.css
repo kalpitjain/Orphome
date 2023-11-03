@@ -1,0 +1,243 @@
+/* General Styles */
+h1 {
+  font-weight: 800;
+  font-size: 4rem;
+}
+
+.navbar {
+  transition: background-color 0.3s ease;
+  padding: 0 2%;
+}
+
+.nav-links {
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 600;
+  margin: auto 1rem;
+}
+
+.title {
+  width: 100%;
+  height: 100vh;
+  background: url("images/title.png") center/cover no-repeat;
+  position: relative;
+}
+
+.title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1.5));
+}
+
+.text-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.main-heading {
+  margin-bottom: 1.2rem;
+}
+
+.slogan {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.map-button {
+  padding: 2% 5%;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+/* About */
+.about {
+  padding: 2.5rem 20%;
+  text-align: center;
+}
+
+.about-heading {
+  margin: 2.5rem 0;
+}
+
+.about-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 2%;
+  margin-bottom: 2.5rem;
+}
+
+.about-description {
+  font-size: 0.85rem;
+}
+
+/* Testimonials */
+.testimonials {
+  text-align: center;
+  background-color: #f9f9f9;
+  padding: 5rem 20%;
+}
+
+.slide {
+  margin-top: 2.5rem;
+}
+
+.carousel-inner {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.testimonial-image {
+  border-radius: 100%;
+  width: 70px;
+  height: 70px;
+}
+
+.testimonial-item {
+  margin: 1rem auto;
+}
+
+/* Gallery */
+.gallery {
+  padding: 5rem 0;
+  text-align: center;
+}
+
+/* Newsletter Signup */
+.newsletter {
+  text-align: center;
+  background-color: #f9f9f9;
+  padding: 5rem 20%;
+  align-items: center;
+}
+
+.newsletter-item {
+  margin: 2rem auto;
+}
+
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.form-control {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.newsletter .btn {
+  color: #000;
+  font-weight: 600;
+}
+
+/* FAQ */
+.faq {
+  text-align: center;
+  padding: 5rem 20%;
+}
+
+.faq-container {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.faq-item {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.faq-items {
+  margin: 2rem auto;
+}
+
+.faq-item:hover {
+  background-color: #ebebeb;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.faq-icon {
+  font-size: 20px;
+}
+
+.faq-answer {
+  margin-top: 10px;
+  display: none;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+/* Contact */
+.contact {
+  text-align: center;
+  background-color: #f9f9f9;
+  padding: 5rem 30%;
+}
+
+.contact h1 {
+  margin-bottom: 2.5rem;
+}
+
+.contact input {
+  margin-bottom: 1rem;
+}
+
+.contact .form-check {
+  margin: 1rem auto;
+}
+
+contact button {
+  width: 100%;
+  font-weight: 600;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  background-color: #fff;
+  padding: 2.5rem 30% 0.05rem;
+  font-size: smaller;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-item {
+  margin-bottom: 1rem;
+}
+
+.social-links a {
+  font-size: 24px;
+  color: #000;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  color: #888888;
+}
