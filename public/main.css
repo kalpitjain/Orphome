@@ -208,7 +208,7 @@ h1 {
   margin: 1rem auto;
 }
 
-contact button {
+.contact button {
   width: 100%;
   font-weight: 600;
 }
@@ -240,4 +240,9 @@ contact button {
 
 .social-links a:hover {
   color: #888888;
+}
+
+/* Map */
+#map {
+  height: 100vh;
 }
