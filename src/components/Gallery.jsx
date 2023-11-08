@@ -20,7 +20,7 @@ function Gallery() {
           {images.map((image, index) => (
             <Carousel.Item key={index}>
               <img
-                className="d-block mx-auto"
+                className="d-block mx-auto gallery-image"
                 src={image}
                 alt="gallery"
                 style={{ height: "30rem" }}

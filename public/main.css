@@ -5,6 +5,7 @@ h1 {
   padding-bottom: 2rem;
 }
 
+/* Header */
 .navbar {
   transition: background-color 0.3s ease;
   padding: 0 2%;
@@ -15,6 +16,10 @@ h1 {
   cursor: pointer;
   font-weight: 600;
   margin: auto 1rem;
+}
+
+.navbar-toggler {
+  border: none;
 }
 
 /* Title */
@@ -133,11 +138,14 @@ h1 {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 .newsletter .btn {
   color: #000;
   font-weight: 600;
+  width: 100%;
 }
 
 /* FAQ */
@@ -153,8 +161,8 @@ h1 {
 }
 
 .faq-item {
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  border-bottom: 1px solid #ddd;
+  border-radius: 2px;
   margin-bottom: 10px;
   padding: 10px;
   cursor: pointer;
@@ -263,12 +271,14 @@ h1 {
 
 @media (max-width: 768px) {
   h1 {
-    font-size: 2rem;
+    font-size: 3rem;
+    padding-bottom: 1rem;
   }
 
   /* Titile */
   .main-heading {
     font-size: 3rem;
+    margin-bottom: 1rem;
   }
 
   .slogan {
@@ -279,27 +289,62 @@ h1 {
     padding: 1rem;
   }
 
-  /* Contact */
-  .contact {
-    padding: 3rem 5%;
+  /* About */
+  .about {
+    padding: 1.5rem 5%;
   }
 
-  .form-group.row {
-    flex-direction: column;
+  .about-heading {
+    margin: 1.5rem 0;
   }
 
-  .col-md-6 {
-    flex: 0 0 100%;
+  /* Testimonials */
+  .testimonials {
+    padding: 1.5rem 5%;
+  }
+
+  /* Gallery */
+  .gallery {
+    padding: 2.5rem 0;
+  }
+
+  .gallery-image {
+    width: 100%;
+  }
+
+  /* Newsletter Signup */
+  .newsletter {
+    padding: 1.5rem 5%;
+  }
+
+  .newsletter-item {
+    margin: 1.5rem 0;
   }
 
   /* FAQ */
   .faq {
-    padding: 5rem 10%;
+    margin: 0;
   }
 
-  /* Newsletter */
-  .newsletter {
-    padding: 5rem 10%;
+  .faq-items {
+    margin: 1rem auto;
+  }
+
+  /* Contact */
+  .contact {
+    padding: 1rem;
+  }
+
+  .contact button {
+    margin-bottom: 2rem;
+  }
+  .col-md-6 {
+    flex: 0 0 calc(50% - 1rem);
+    margin-bottom: 1rem;
+  }
+
+  .col-md-6 {
+    flex: 0 0 100%;
   }
 }
 
@@ -308,7 +353,6 @@ h1 {
     font-size: 1.8rem;
   }
 
-  /* FAQ */
   .faq {
     padding: 5rem 5%;
   }
