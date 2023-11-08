@@ -23,7 +23,7 @@ function Gallery() {
                 className="d-block mx-auto"
                 src={image}
                 alt="gallery"
-                style={{ height: "30rem", width: "100%" }}
+                style={{ height: "30rem" }}
               />
             </Carousel.Item>
           ))}
