@@ -1,24 +1,29 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Map, View } from "ol";
 import { OSM, Vector as VectorSource } from "ol/source";
 import { Point } from "ol/geom";
 import { Tile as TileLayer, Vector as VectorLayer } from "ol/layer";
 import Feature from "ol/Feature";
 import Geolocation from "ol/Geolocation";
+import Overlay from "ol/Overlay";
 import { useGeographic } from "ol/proj";
+import orphome from "./orphome";
 
 // eslint-disable-next-line react-hooks/rules-of-hooks
 useGeographic();
 
-const places = [
-  [77.1025, 28.7041],
-  [72.8777, 19.076],
-  [78.4867, 17.385],
-];
-
-const features = places.map((place) => new Feature(new Point(place)));
+const features = orphome.map(({ coordinates, url, name, phone }) => {
+  const feature = new Feature(new Point(coordinates));
+  feature.set("url", url);
+  feature.set("name", name);
+  feature.set("phone", phone);
+  return feature;
+});
 
 function MapComponent() {
+  const [hover, setHover] = useState(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
   useEffect(() => {
     const mapTarget = document.getElementById("map");
 
@@ -58,6 +63,33 @@ function MapComponent() {
       ],
     });
 
+    const overlay = new Overlay({
+      element: document.createElement("div"),
+      autoPan: true,
+      autoPanAnimation: {
+        duration: 250,
+      },
+    });
+
+    map.addOverlay(overlay);
+
+    map.on("pointermove", (event) => {
+      const feature = map.forEachFeatureAtPixel(
+        event.pixel,
+        (feature) => feature
+      );
+      if (feature) {
+        setHover(feature);
+        const coordinates = feature.getGeometry().getCoordinates();
+        setMousePosition({ x: event.pixel[0], y: event.pixel[1] });
+        overlay.getElement().innerHTML = `Coordinates: ${coordinates}`;
+        overlay.setPosition(coordinates);
+      } else {
+        setHover(null);
+        overlay.setPosition(undefined);
+      }
+    });
+
     return () => {
       map.setTarget(null);
       map.dispose();
@@ -67,6 +99,29 @@ function MapComponent() {
   return (
     <div>
       <div id="map"></div>
+      {hover && (
+        <div
+          className="hover-box"
+          style={{
+            top: mousePosition.y,
+            left: mousePosition.x,
+          }}
+        >
+          <div className="hoverbox-content">
+            <h6 className="orphanage-name">{hover.get("name")}</h6>
+            <h6 className="orphanage-number">{hover.get("phone")}</h6>
+            <hr />
+            <div className="preview-container">
+              <iframe
+                title="Website Preview"
+                src={hover.get("url")}
+                width="100%"
+                height="100%"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

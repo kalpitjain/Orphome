@@ -298,6 +298,23 @@ h1 {
   height: 100vh;
 }
 
+.hover-box {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 2px 3px rgb(92, 92, 92);
+  padding: 10px;
+  border-radius: 7px;
+  text-align: center;
+}
+
+.orphanage-name {
+  font-weight: 700;
+}
+
+.orphanage-number {
+  font-weight: 600;
+}
+
 @media (max-width: 768px) {
   h1 {
     font-size: 3rem;
