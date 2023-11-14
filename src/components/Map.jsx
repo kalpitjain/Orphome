@@ -24,6 +24,13 @@ function MapComponent() {
   const [hover, setHover] = useState(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
+  const handleWebsiteClick = () => {
+    const websiteUrl = hover.get("url");
+    if (websiteUrl) {
+      window.open(websiteUrl, "_blank");
+    }
+  };
+
   useEffect(() => {
     const mapTarget = document.getElementById("map");
 
@@ -107,7 +114,7 @@ function MapComponent() {
             left: mousePosition.x,
           }}
         >
-          <div className="hoverbox-content">
+          <div className="hoverbox-content" onClick={handleWebsiteClick}>
             <h6 className="orphanage-name">{hover.get("name")}</h6>
             <h6 className="orphanage-number">{hover.get("phone")}</h6>
             <hr />
